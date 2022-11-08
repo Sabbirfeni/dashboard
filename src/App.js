@@ -48,10 +48,10 @@ const App = () => {
                             {/* All routes */}
                             <Routes>
                                 <Route path="/" element={<ECommerce/>} />
-                                <Route path="/e-commerce" element={<ECommerce/>} />
+                                <Route path="/ecommerce" element={<ECommerce/>} />
 
                                 {/* Pages */}
-                                <Route path="/order" element={<Order/>}  />
+                                <Route path="/orders" element={<Order/>}  />
                                 <Route path="/employees" element={<Employees/>} />                    
                                 <Route path="/customers" element={<Customers/>} />
 
