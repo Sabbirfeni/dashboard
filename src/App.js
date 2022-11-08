@@ -20,7 +20,7 @@ const App = () => {
                         {activeMenu ? (
                             <div className="w-72 fixed sidebar 
                             dark:bg-secondary-dark-bg
-                            text-white bg-black"
+                            text-black"
                             >
                                 <Sidebar />
                             </div>
@@ -31,6 +31,7 @@ const App = () => {
                                 <Sidebar />
                             </div>
                         )}
+
 
                         {/* Main section */}
                         <div className={
@@ -69,6 +70,7 @@ const App = () => {
                                 <Route path="/colorMapping" element={<ColorMapping/>} />                                                          
                                 <Route path="/pyramid" element={<Pyramid/>} />                                                          
                                 <Route path="/stacked" element={<Stacked/>} />                                
+                                <Route path="*" element='404'/>                                
                             </Routes>
                         </div>
 
