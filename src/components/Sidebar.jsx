@@ -5,13 +5,15 @@ import { MdOutlineCancel } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import { links } from '../data/dummy';
+import { useStateContext } from '../contexts/ContextProvider';
 
 const Sidebar = () => {
-  const activeMenu = true;
+  const { activeMenu, setActiveMenu } = useStateContext();
+
   const activeLink = `flex items-center gap-5
-  pl-4 pt-3 pb-2.5 rounded-lg text-white bg-red-300 text-md m-2`;
+  pl-4 p-3 rounded-lg text-white bg-black text-sm m-2`;
   const normalLink = `flex items-center gap-5
-  pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200
+  pl-4 p-3 rounded-lg text-sm text-gray-700 dark:text-gray-200
   dark:hover:text-black hover:bg-light-gray m-2`
 
   return (
@@ -20,7 +22,7 @@ const Sidebar = () => {
 
       {activeMenu && (<>
         <div className='flex justify-between items-center'>
-          <Link to='/' onClick={() => {}}
+          <Link to='/' onClick={() => setActiveMenu(false)}
            className="items-center gap-3 ml-3 mt-4
             flex text-xl font-extrabold tracking-tight
             dark:text-white text-slate-900">
@@ -28,7 +30,9 @@ const Sidebar = () => {
           </Link>
           <TooltipComponent content="Menu" position="BottomCenter">
             <button type='button'
-              onClick={() => {}}
+              onClick={() => setActiveMenu(
+                (preActiveMenu) => !preActiveMenu
+              )}
               className='text-2xl rounded-full
               p-2 text-neutral-300 hover:text-neutral-900 hover:bg-light-gray mr-1 block
               md:hidden'>
@@ -36,11 +40,12 @@ const Sidebar = () => {
             </button>
           </TooltipComponent>
         </div>
+
         <div className='mt-10'>
           {links.map((item) => (
             <div key={item.title}>
               <p className='text-gray-400 m-3
-                mt-4 uppercase'>
+                mt-4 uppercase text-xs border-b-1 pb-1'>
                 {item.title}
               </p>
               {item.links.map((link) => (
@@ -49,7 +54,9 @@ const Sidebar = () => {
                  onClick={() => {}}
                  className={({ isActive }) => isActive ? activeLink : normalLink}>
                   <span>{link.icon}</span>
-                  {link.name}
+                  <span className='capitalize'>
+                    {link.name}
+                  </span>
                 </NavLink>
               ))}
             </div>

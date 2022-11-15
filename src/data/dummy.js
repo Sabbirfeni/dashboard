@@ -42,7 +42,6 @@ export const gridOrderStatus = (props) => (
     {props.Status}
   </button>
 );
-
 export const kanbanGrid = [
   { headerText: 'To Do',
     keyField: 'Open',

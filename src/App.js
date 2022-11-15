@@ -7,9 +7,10 @@ import './App.css';
 import { Navbar, Sidebar, Footer, ThemeSetting } from './components';
 import { Area, Bar, Calculator, ColorMapping, ColorPicker, Customers, ECommerce,
          Editor, Employees, Financial, Kanban, Line, Order, Pie, Pyramid, Stacked } from './pages';
+import { useStateContext } from "./contexts/ContextProvider";
 
 const App = () => {
-    const activeMenu = true;
+    const { activeMenu } = useStateContext();
     
     return (
         <div>
@@ -19,7 +20,7 @@ const App = () => {
                         {/* Sidebar */}
                         {activeMenu ? (
                             <div className="w-72 fixed sidebar 
-                            dark:bg-secondary-dark-bg
+                            bg-white dark:bg-secondary-dark-bg
                             text-black"
                             >
                                 <Sidebar />
