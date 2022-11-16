@@ -22,7 +22,8 @@ const Sidebar = () => {
 
       {activeMenu && (<>
         <div className='flex justify-between items-center'>
-          <Link to='/' onClick={() => setActiveMenu(false)}
+          <Link to='/'
+          //  onClick={() => setActiveMenu(false)}
            className="items-center gap-3 ml-3 mt-4
             flex text-xl font-extrabold tracking-tight
             dark:text-white text-slate-900">
@@ -33,8 +34,8 @@ const Sidebar = () => {
               onClick={() => setActiveMenu(
                 (preActiveMenu) => !preActiveMenu
               )}
-              className='text-2xl rounded-full
-              p-2 text-neutral-300 hover:text-neutral-900 hover:bg-light-gray mr-1 block
+              className='text-3xl rounded-full
+              text-neutral-300 hover:text-neutral-900 hover:bg-light-gray mr-1 block
               md:hidden'>
               <MdOutlineCancel/>
             </button>
