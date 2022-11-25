@@ -3081,7 +3081,7 @@ export const ordersGrid = [
 //     Time: 'May 2021',
 //   },
 // ];
-// export const SparklineAreaData = [
+// export const SparkLineAreaData = [
 //   { x: 1, yval: 2 },
 //   { x: 2, yval: 6 },
 //   { x: 3, yval: 8 },
@@ -3146,7 +3146,7 @@ export const ordersGrid = [
 //   'NextPage',
 // ];
 
-// export const ecomPieChartData = [
+// export const eComPieChartData = [
 //   { x: '2018', y: 18, text: '35%' },
 //   { x: '2019', y: 18, text: '15%' },
 //   { x: '2020', y: 18, text: '25%' },
